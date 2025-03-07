@@ -7,7 +7,8 @@ const getRoleId = async (roleName) => {
     return rows[0].id;
 }
 
-const findAllStudents = async (payload) => {
+const findAllStudents = async (payload = {}) => {
+    // Add default empty object to prevent undefined payload
     const { name, className, section, roll } = payload;
     let query = `
         SELECT
